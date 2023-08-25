@@ -12,7 +12,6 @@ export default async function handler(req, res) {
       case 'GET':
         try {
           const products = await productModel.find({});
-          console.log("products array: ", products) /* find all the data in our database */
           res.status(200).json({ success: true, data: products })
         } catch (error) {
           res.status(400).json({ success: false })

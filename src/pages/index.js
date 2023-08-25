@@ -4,10 +4,11 @@ import Layout from '../components/Layout'
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import FeaturedCategory from '../components/FeaturedCategory'
+import RandomProducts from '../components/RandomProducts'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home({products}) {
+export default function Home({products, randomProducts}) {
   return (
     <div>
       <Head>
@@ -22,11 +23,12 @@ export default function Home({products}) {
       </Head>
         <div>{products.length}</div>
         <Banner/>
+        <RandomProducts products={randomProducts}/>
         <FeaturedCategory/>
         {
           products.map((product)=> (
             <div key={product._id}>
-              {product.title}
+              {product.name}
             </div>
           ))
         }
@@ -41,10 +43,13 @@ export async function getStaticProps() {
   // Call an external API endpoint to get posts
   const res = await fetch("http://localhost:3000/api/products");
   const data = await res.json();
+  const randomres = await fetch("http://localhost:3000/api/products/random");
+  const random = await randomres.json();
  
   return {
     props: {
-      products:data.data
+      products:data.data,
+      randomProducts: random.data
     },
   }
 }
