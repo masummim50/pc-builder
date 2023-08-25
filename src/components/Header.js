@@ -7,11 +7,17 @@ const Header = () => {
             <div className="logo">
 sdf
             </div>
-            <div className="menu">
+            <div className="flex gap-2">
                 <button className='border border-black rounded-lg px-5 py-2 hover:bg-black hover:text-white transition-all'>
 
                 <Link href={"/pc-builder"}>
                     Pc Builder
+                </Link>
+                </button>
+                <button className='border border-black rounded-lg px-5 py-2 hover:bg-black hover:text-white transition-all'>
+
+                <Link href={"/login"}>
+                    Login
                 </Link>
                 </button>
             </div>

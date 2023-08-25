@@ -21,19 +21,10 @@ export default function Home({products, randomProducts}) {
           key="desc"
         />
       </Head>
-        <div>{products.length}</div>
         <Banner/>
         <RandomProducts products={randomProducts}/>
         <FeaturedCategory/>
-        {
-          products.map((product)=> (
-            <div key={product._id}>
-              {product.name}
-            </div>
-          ))
-        }
-      
-      HOme
+        
     </div>
   )
 }

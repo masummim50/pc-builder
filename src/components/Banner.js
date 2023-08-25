@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -7,15 +8,17 @@ import Image from 'next/image';
 
 const Banner = () => {
     return (
+      <>
 
-        <div className="grid grid-cols-12 gap-1">
+        <div className="grid grid-cols-12 gap-1 mt-6">
           <div className="hidden md:block md:col-span-4">
 
           <Swiper
+          modules={[Autoplay]}
       slidesPerView={1}
       loop={true}
       className='rounded-lg'
-      autoplay={1}
+      autoplay={{delay:800, disableOnInteraction:false}}
 
     >
       <SwiperSlide className=' bg-red-200 text-center'>
@@ -36,10 +39,11 @@ const Banner = () => {
           <div className="col-span-12 md:col-span-8">
             
           <Swiper
+          modules={[Autoplay]}
       slidesPerView={1}
       loop={true}
       className='rounded-md'
-      autoplay={1}
+      autoplay={{delay:900, disableOnInteraction:false}}
 
     >
       <SwiperSlide className=' bg-red-200 text-center'>
@@ -57,6 +61,7 @@ const Banner = () => {
     </Swiper>
           </div>
         </div>
+      </>
     );
 };
 

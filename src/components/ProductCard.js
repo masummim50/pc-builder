@@ -16,7 +16,7 @@ const ProductCard = ({ product }) => {
                         height={200}
                     />
                 </div>
-                <h2 className='font-bold h-[50px] text-gray-700 overflow-hidden mb-2'>{product.name}</h2>
+                <h2 className='font-bold h-[50px] text-gray-700 overflow-hidden mb-2 font-serif'>{product.name}</h2>
                 <div className="flex justify-between">
                     <div className="bg-pink-200 rounded-lg px-3 py-2 text-[11px]">{product.brand}</div>
                     <div className="bg-purple-200 rounded-lg px-3 py-2 text-[11px]">{product.status}</div>
