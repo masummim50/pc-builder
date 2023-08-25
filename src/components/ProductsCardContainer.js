@@ -1,11 +1,11 @@
 import React from 'react';
 import ProductCard from './ProductCard';
 
-const RandomProducts = ({products}) => {
+const ProductsCardContainer = ({headline, products}) => {
     return (
         <div className='mt-6 mb-3'>
         <h2 className="text-gray-700 font-bold underline text-[30px] mb-3">
-            Featured Products
+            {headline}
         </h2>
         <div className='grid grid-cols-3 gap-4 container mx-auto'>
             {
@@ -18,4 +18,4 @@ const RandomProducts = ({products}) => {
     );
 };
 
-export default RandomProducts;
+export default ProductsCardContainer;

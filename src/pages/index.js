@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import Head from 'next/head'
 import Banner from '../components/Banner'
 import FeaturedCategory from '../components/FeaturedCategory'
-import RandomProducts from '../components/RandomProducts'
+import ProductsCardContainer from '../components/ProductsCardContainer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +22,7 @@ export default function Home({products, randomProducts}) {
         />
       </Head>
         <Banner/>
-        <RandomProducts products={randomProducts}/>
+        <ProductsCardContainer headline={"Featured Products"} products={randomProducts}/>
         <FeaturedCategory/>
         
     </div>
