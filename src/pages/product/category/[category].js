@@ -9,7 +9,6 @@ const ProductByCategory = ({ products }) => {
     return (
         <>
         <ProductsCardContainer headline={category.toUpperCase()} products={products} />
-        <div>product details</div>
         </>
     );
 };
