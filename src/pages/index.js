@@ -25,7 +25,7 @@ export default function Home({products, randomProducts}) {
         />
       </Head>
         <Banner/>
-        <ProductsCardContainer products={randomProducts}/>
+        <ProductsCardContainer products={randomProducts} headline={"Featured products"}/>
         <FeaturedCategory/>
         
     </div>
