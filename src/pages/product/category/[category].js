@@ -1,15 +1,11 @@
 import React from 'react';
 import Layout from '../../../components/Layout';
-import { useRouter } from 'next/router';
 import ProductsCardContainer from '../../../components/ProductsCardContainer';
 
 const ProductByCategory = ({products}) => {
-    const router = useRouter();
-    const category = router.query.category;
     return (
         <>
-        <ProductsCardContainer headline={category.toUpperCase()} products={products} />
-        <h2>productby category page</h2>
+        <ProductsCardContainer products={products} />
         </>
     );
 };
@@ -32,7 +28,7 @@ export const getStaticPaths = async () => {
 }
 
 export async function getStaticProps({params}) {
-    const res = await fetch(`http://localhost:5000/api/product/category/${params.category}`);
+    const res = await fetch(`https://pc-builder-backend-4oyy.onrender.com/api/product/category/${params.category}`);
     const data = await res.json();
     return {
         props: {

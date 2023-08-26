@@ -5,10 +5,13 @@ import Head from 'next/head'
 import Banner from '../components/Banner'
 import FeaturedCategory from '../components/FeaturedCategory'
 import ProductsCardContainer from '../components/ProductsCardContainer'
+import { useSession } from 'next-auth/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({products, randomProducts}) {
+  const {data} = useSession();
+  console.log("loging data: ", data)
   return (
     <div>
       <Head>
@@ -22,7 +25,7 @@ export default function Home({products, randomProducts}) {
         />
       </Head>
         <Banner/>
-        <ProductsCardContainer headline={"Featured Products"} products={randomProducts}/>
+        <ProductsCardContainer products={randomProducts}/>
         <FeaturedCategory/>
         
     </div>
@@ -32,9 +35,9 @@ export default function Home({products, randomProducts}) {
 
 export async function getStaticProps() {
   // Call an external API endpoint to get posts
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch("https://pc-builder-backend-4oyy.onrender.com/api/products");
   const data = await res.json();
-  const randomres = await fetch("http://localhost:3000/api/products/random");
+  const randomres = await fetch("https://pc-builder-backend-4oyy.onrender.com/api/products/random");
   const random = await randomres.json();
  
   return {
