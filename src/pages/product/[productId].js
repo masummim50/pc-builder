@@ -70,13 +70,14 @@ export default ProductDetails;
 
 
 export const getStaticPaths = async () => {
+  
   const res = await fetch("http://localhost:3000/api/products");
   const products = await res.json();
 
   const paths = products.data.map(product => ({
     params: { productId: product._id }
   }));
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 export async function getStaticProps({ params }) {

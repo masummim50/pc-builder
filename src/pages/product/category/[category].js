@@ -26,7 +26,7 @@ export const getStaticPaths = async () => {
         params: { category: "psu" },
         params: { category: "other"}, 
     }]
-    return { paths, fallback: true }
+    return { paths, fallback: false }
 }
 
 export async function getStaticProps({params}) {
