@@ -71,18 +71,18 @@ export default ProductDetails;
 
 export const getStaticPaths = async () => {
   
-  const res = await fetch("http://localhost:3000/api/products");
+  const res = await fetch("http://localhost:5000/api/products");
   const products = await res.json();
 
   const paths = products.data.map(product => ({
     params: { productId: product._id }
   }));
-  return { paths, fallback: false }
+  return { paths, fallback: true }
 }
 
 export async function getStaticProps({ params }) {
   try {
-    const res = await fetch(`http://localhost:3000/api/products/${params.productId}`);
+    const res = await fetch(`http://localhost:5000/api/product/${params.productId}`);
     console.log("before error")
     const data = await res.json();
     console.log("after error")
