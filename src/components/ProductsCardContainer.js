@@ -8,7 +8,7 @@ const ProductsCardContainer = ({products, headline}) => {
     console.log("while building products: ", products?.length)
     return (
         <div className='mt-6 mb-3'>
-        <h2 className="text-gray-700 font-bold underline text-[30px] mb-3">
+        <h2 className="text-gray-700 font-bold underline text-[15px] md:text-[30px] mb-3">
             {headline && headline.toUpperCase() }
             {(!headline && router.query.category) && router.query.category.toUpperCase()}
         </h2>

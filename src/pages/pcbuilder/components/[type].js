@@ -43,10 +43,10 @@ const Components = ({ products }) => {
         router.push("/pcbuilder")
     }
     return (
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
             {
                 products?.map((product) => (
-                    <div key={product?._id} className='h-full rounded-lg border-t-4 border-t-indigo-500/25 hover:border-t-indigo-500'>
+                    <div key={product?._id} className='h-full mb-3 rounded-lg border-t-4 border-t-indigo-500/25 hover:border-t-indigo-500'>
                         <div className="p-3 shadow gap-3 rounded-lg hover:shadow-lg h-auto transition-all ease-in">
 
                             <div style={{ width: '100%', height: '100%', position: 'relative' }} className=' flex items-center justify-center'>
@@ -58,9 +58,9 @@ const Components = ({ products }) => {
                                 />
                             </div>
                             <h2 className='font-bold h-[50px] text-gray-700 overflow-hidden mb-2 font-serif'>{product.name}</h2>
-                            <div className="flex justify-between">
+                            <div className="flex gap-2">
                                 <div className="bg-pink-200 rounded-lg px-3 py-2 text-[11px]">{product.brand}</div>
-                                <div className="bg-purple-200 rounded-lg px-3 py-2 text-[11px]">{product.status}</div>
+                                <div className="bg-green-200 text-green-900 rounded-lg px-3 py-2 text-[11px]">{product.status}</div>
                             </div>
                             <div className='mt-2'><span className='font-bold'>Price: </span>{product.price.toLocaleString("en-US")} Bdt</div>
                             <div>
@@ -71,7 +71,7 @@ const Components = ({ products }) => {
                                 }
                                 )
                             </div>
-                            <button onClick={()=> handleSelect(product)}>
+                            <button onClick={()=> handleSelect(product)} className='bg-green-400 px-6 py-2 mt-2 rounded-lg hover:bg-green-800 hover:text-white'>
                                 Select
                             </button>
                         </div>

@@ -47,15 +47,15 @@ const Banner = () => {
 
     >
       <SwiperSlide className=' bg-red-200 text-center'>
-        <div className="bg-white bg-[url('../assets/images/m1.jpg')] h-[300px] bg-center bg-cover">
+        <div className="bg-white bg-[url('../assets/images/m1.jpg')] h-[200px] md:h-[300px] bg-center bg-cover">
         </div>
       </SwiperSlide>
       <SwiperSlide className=' bg-red-200 text-center'>
-        <div className="bg-white bg-[url('../assets/images/m2.jpg')] h-[300px] bg-center bg-cover">
+        <div className="bg-white bg-[url('../assets/images/m2.jpg')] h-[200px] md:h-[300px] bg-center bg-cover">
         </div>
       </SwiperSlide>
       <SwiperSlide className=' bg-red-200 text-center'>
-        <div className="bg-white bg-[url('../assets/images/m3.jpg')] h-[300px] bg-center bg-cover">
+        <div className="bg-white bg-[url('../assets/images/m3.jpg')] h-[200px] md:h-[300px] bg-center bg-cover">
         </div>
       </SwiperSlide>
     </Swiper>

@@ -4,7 +4,7 @@ import React from 'react';
 const FeaturedCategory = () => {
     return (
         <div className='mt-5'>
-            <h2 className='text-[30px] font-bold underline mb-2'>Featured Components: </h2>
+            <h2 className='text-[15px] md:text-[30px] font-bold underline mb-2'>Featured Components: </h2>
             <div className="grid grid-cols-3 gap-3">
                 <Link href={"/product/category/motherboard"} className='hover:shadow-lg'>
                     <div className='md:h-[100px] h-[80px]  rounded-lg bg-[url("../assets/images/m2.jpg")] bg-cover hover:scale-105 transition-all bg-center flex items-center justify-center relative'>
