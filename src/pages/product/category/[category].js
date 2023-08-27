@@ -28,7 +28,7 @@ export const getStaticPaths = async () => {
 }
 
 export async function getStaticProps({params}) {
-    const res = await fetch(`https://pc-builder-backend-4oyy.onrender.com/api/product/category/${params.category}`);
+    const res = await fetch(`https://pc-builder-hazel.vercel.app/api/products/category/${params.category}`);
     const data = await res.json();
     return {
         props: {

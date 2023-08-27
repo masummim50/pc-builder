@@ -83,7 +83,7 @@ export default ProductDetails;
 
 export const getStaticPaths = async () => {
   
-  const res = await fetch("https://pc-builder-backend-4oyy.onrender.com/api/products");
+  const res = await fetch("https://pc-builder-hazel.vercel.app/api/products");
   const products = await res.json();
 
   const paths = products.data.map(product => ({
@@ -94,7 +94,7 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps({ params }) {
   try {
-    const res = await fetch(`https://pc-builder-backend-4oyy.onrender.com/api/product/${params.productId}`);
+    const res = await fetch(`https://pc-builder-hazel.vercel.app/api/products/${params.productId}`);
     const data = await res.json();
     return {
       props: {

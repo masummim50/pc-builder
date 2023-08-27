@@ -84,7 +84,7 @@ const Components = ({ products }) => {
 export default Components;
 
 export const getServerSideProps = async (context) => {
-    const res = await fetch(`https://pc-builder-backend-4oyy.onrender.com/api/product/category/${context.query.type}`);
+    const res = await fetch(`https://pc-builder-hazel.vercel.app/api/products/category/${context.query.type}`);
     const data = await res.json();
 
     return {
