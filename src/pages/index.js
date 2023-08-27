@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({products, randomProducts}) {
   const {data} = useSession();
-  console.log("loging data: ", data)
   return (
     <div>
       <Head>

@@ -11,7 +11,6 @@ const Components = ({ products }) => {
     const dispatch = useDispatch()
     const router = useRouter();
     const handleSelect = (product)=> {
-        console.log(product.category, "handleselect")
         switch (product.category) {
             case 'motherboard':
                 dispatch(setMotherBoard(product));
@@ -85,11 +84,8 @@ const Components = ({ products }) => {
 export default Components;
 
 export const getServerSideProps = async (context) => {
-    console.log("context: ", context)
     const res = await fetch(`https://pc-builder-backend-4oyy.onrender.com/api/product/category/${context.query.type}`);
     const data = await res.json();
-    console.log("some data", data, "here")
-    console.log(`https://pc-builder-backend-4oyy.onrender.com/api/product/${context.query.type}`)
 
     return {
         props: {

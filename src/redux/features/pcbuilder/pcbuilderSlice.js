@@ -32,14 +32,13 @@ export const pcBuilderSlice = createSlice({
       state.monitor = action.payload;
     },
     reset: (state)=> {
-      state = {
-        motherboard: null,
-        cpu:null,
-        psu:null,
-        storage:null,
-        ram:null,
-        monitor:null
-      };
+        state.motherboard = null;
+        state.cpu = null;
+        state.psu = null;
+        state.storage = null;
+        state.ram = null;
+        state.monitor = null;
+      
     }
 }
 })

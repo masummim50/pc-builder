@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import { useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Image from 'next/image';
+import { reset } from '../../redux/features/pcbuilder/pcbuilderSlice';
+import BuildCompletePopup from '../../components/BuildCompletePopup';
 
 const PcBuilder = () => {
+    const dispatch = useDispatch()
     const { data } = useSession();
-    console.log("login data from pcbuilder: ", data)
     const selected = useSelector(state => state.pcbuilder);
     function calculateTotalCost(obj) {
         return Object.values(obj)
@@ -16,12 +18,21 @@ const PcBuilder = () => {
     }
     function checkBuildFullFilled(obj) {
         return Object.values(obj).every(item => item !== null);
-      }
-    const handleBuildFullFilled = ()=> {
-        console.log("build fullfilled")
+    }
+    const [showPopup, setShowPopup] = useState(false)
+    const handleBuildFullFilled = () => {
+        setShowPopup(true)
     }
     return (
         <div>
+            <BuildCompletePopup showPopup={showPopup} setShowPopup={setShowPopup}/>
+            <div className="flex justify-between mb-3">
+
+                <h2 className='font-bold'>Build your pc:</h2>
+                <button onClick={() => dispatch(reset())} className="bg-blue-200 px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white">
+                    Reset Build
+                </button>
+            </div>
             <div className="border-2 rounded-md border-blue-400 px-5 py-5">
 
                 <div className="flex items-center border-b-2 border-gray-300 pb-2">
@@ -128,7 +139,9 @@ const PcBuilder = () => {
                     </p>
                 </div>
                 <div className="text-right">
-                    <button disabled={!checkBuildFullFilled(selected)} onClick={()=>handleBuildFullFilled()} className={`bg-blue-200 px-3 py-1 rounded-lg font-bold disabled:bg-blue-50 disabled:text-gray-400`}>Complete Build</button>
+                    <button 
+                    disabled={!checkBuildFullFilled(selected)}
+                     onClick={() => handleBuildFullFilled()} className={`bg-blue-200 px-3 py-1 rounded-lg font-bold disabled:bg-blue-50 disabled:text-gray-400`}>Complete Build</button>
                 </div>
             </div>
         </div>

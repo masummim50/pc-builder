@@ -11,7 +11,6 @@ import 'swiper/css';
 const ProductDetails = ({ product }) => {
   const router = useRouter();
   const productId = router.query.productId;
-  console.log("into the dynamic product page: ", router.query, "name: ", product?.name)
   return (
     <div>
 
