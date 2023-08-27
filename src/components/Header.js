@@ -25,12 +25,12 @@ const Header = () => {
                     <>
                         <button onClick={() => signOut()} className='border border-black rounded-[100%] md:rounded-lg px-5 py-2 hover:bg-black hover:text-white transition-all'>
 
-                            <Link className=' md:block hidden' href={"/login"}>
+                            <div className=' md:block hidden'>
                                 logout
-                            </Link>
-                            <Link className=' md:hidden' href={"/login"}>
+                            </div>
+                            <div className=' md:hidden'>
                                 <AiOutlineLogout/>
-                            </Link>
+                            </div>
 
                         </button>
 
